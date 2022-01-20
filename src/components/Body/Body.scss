@@ -1,0 +1,385 @@
+.body {
+    padding: 2rem 0 0;
+    color: rgb(46, 46, 46);
+
+    .heading--1 {
+        margin: 0 7rem;
+
+        .go--back {
+            color: rgb(46, 46, 46);
+            grid-gap: 2rem;
+            
+            .icon {
+                font-size: 20px;
+                position: relative;
+                top: -22px;
+            }
+
+            h1 {
+                margin: 0;
+            }
+
+            p {
+                margin: 1rem 0;
+                color:rgb(172, 171, 171);
+                font-size: 14px;
+            }
+    
+        }
+        
+
+    }
+
+    %section {
+        background-color: white;
+        padding: 2rem 3rem;
+        margin: 2rem 10rem;
+        border-radius: 4px;
+
+        .heading {
+            font-size: 20px;
+        }
+    }
+
+    %switch {
+        background-color: rgb(231, 231, 231);
+        width: 60px;
+        border-radius: 30px;
+        padding: 2px 3px;
+        height: 32px;
+        border: 1px solid #c0c0c0;
+        transition: .2s all ease-in-out;
+
+
+        .dot {
+            width: 26px;
+            height: 26px;
+            background-color: white;
+            color: white;
+            border-radius: 50%;
+            border: 1px solid #c0c0c0;
+            transition: .2s all ease-in-out;
+        }
+    }
+
+    .section--1 {
+        @extend %section;
+
+        .card--container {
+            margin: 2rem 0;
+            grid-gap: 2rem;
+            display: grid;
+            grid-gap: 1rem;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+
+            .card {
+                padding: 2rem 1rem;
+                border-radius: 4px;
+                background-color: #0F44A0;
+                color: white;
+                height: 100px;
+                max-width: 330px;
+                position: relative;
+                overflow: hidden;
+                font-size: 14px;
+
+                .icon {
+                    position: absolute;
+                    right: -20px;
+                    font-size: 80px;
+                    top: 35px;
+                }
+            }
+
+            .card--state {
+                background-color: transparent;
+                color: #888888;
+                border: 1px solid #888888;
+            }
+        }
+
+    }
+
+    .section--2 {
+        @extend %section;
+
+        .icon-error {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .row--1 {
+            display: grid;
+            grid-gap: 1rem;
+            grid-template-columns: minmax(150px, 100px) 1fr 1fr;
+            margin: 1rem 1rem 1rem 0;
+
+            .p--double {
+                
+                p {
+                    border: 1px solid #acabab;
+                    padding: 10px;
+                    border-right: 0;
+                    border-radius: 4px 0 0 4px;
+                    color:#acabab;
+                    
+                    &:nth-child(2) {
+                        border-right: 1px solid #acabab;
+                        border-radius: 0 4px 4px 0;
+                    }
+                }
+            }
+
+            .map--search {
+                position: relative;
+
+                input{
+                    width: 100%;
+                    border: none;
+                    border-radius: 4px;
+                    background-color: #ececec;
+                    color:rgb(134, 134, 134);
+                    padding-left: 40px;
+                    height: 42px;
+                    
+                    &::placeholder {
+                        color:rgb(167, 167, 167);
+                    }
+                }
+
+
+                .icon {
+                    position: absolute;
+                    top: 12px;
+                    left: 10px;
+                    font-size: 18px;
+                }
+            }
+        }
+
+        .row--2 {
+            margin-top: 2rem;
+            grid-template-columns: 1fr 1fr 1fr;
+
+            .map--search:nth-child(2), .map--search:nth-child(3) {
+                input {
+                    padding-left: 18px;
+                }
+
+                .icon--2 {
+                    position: absolute;
+                    left: calc(100% - 30px);
+                }
+            }
+        }
+    }
+
+    .section--3 {
+        @extend %section;
+
+        .header--cont {
+            justify-content: space-between;
+        }
+
+        .switch--cont {
+            grid-gap: 1rem;
+        }
+
+        .switch--1 {
+            @extend %switch;
+        }
+
+        .active--switch {
+            background-color: #0F44A0;
+
+            .dot {
+                width: 26px;
+                margin-left: 27px;
+            }
+        }
+
+        .switch--p2 {
+            margin: 1rem 0;
+            background-color: #ececec;
+            padding: 0 5px;
+            width: 30%;
+            height: 48px;
+            border-radius: 5px;
+            justify-content: space-between;
+
+            p {
+                width: 50%;
+                font-size: 14px;
+                text-align: center;
+                color: rgb(165, 165, 165)
+            }
+
+            .active {
+                background-color: white;
+                padding: 12px 0px;
+                color: #0F44A0;
+                border-radius: 5px;
+                font-weight: 500;
+            }
+        }
+        
+        .add--c {
+            font-size: 16px;
+            color: #0F44A0;
+            margin: 2rem 0;
+        }
+
+        .label--cont {
+            display: grid;
+            grid-gap: 1rem;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            margin-bottom: 1rem;
+
+            .label--input {
+                position: relative;
+
+                input {
+                    height: 50px;
+                    padding-left: 1rem;
+                    border: 2px solid rgb(206, 206, 206);
+                    border-radius: 4px;
+                    width: 100%;
+                }
+                
+                label {
+                    position: absolute;
+                    top: 17px;
+                    left: 30px;
+                    transition: all .2s ease-in;
+                    z-index: 0;
+                    color: rgb(148, 148, 148);
+                }
+                
+                input:focus {
+                    border: 2px solid #0F44A0;
+                    
+                    & + label {
+                        top: -10px;
+                        left: 15px;
+                        background-color: white;
+                        color:#0F44A0;
+                        font-size: 14px;
+                        padding: 2px 5px;
+                        border-radius: 10px;
+                    }
+                    
+                }
+
+                .inputFLoat {
+                    border: 2px solid #0F44A0;
+                }
+
+                .addFloat {
+                    top: -10px;
+                    left: 15px;
+                    background-color: white;
+                    color:#0F44A0;
+                    font-size: 14px;
+                    padding: 2px 5px;
+                    border-radius: 10px;
+                }
+
+                span {
+                    position: absolute;
+                    right: 10px;
+                    top: 17px;
+                    color: rgb(148, 148, 148);
+                }
+
+            }
+
+            .times {
+                position: relative;
+                font-size: 30px;
+                background-color: #dddddd;
+                width: fit-content;
+                height: fit-content;
+                color: white;
+                border-radius: 50%;
+                padding: 5px 10px 2px;
+                top: 3px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .section--4 {
+        @extend %section;
+
+        .heading {
+            padding: 0 0 2rem 0;
+        }
+
+        .buttontext--cont {
+            display: grid;
+            grid-gap: 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            margin: 2rem 0;
+        }
+
+        .text--switcher {
+            grid-gap: 2rem;
+        }
+
+        .switch--p2 {
+            @extend %switch;
+        }
+
+        .active--switch {
+            background-color: #0F44A0;
+
+            .dot {
+                width: 26px;
+                margin-left: 24px;
+            }
+        }
+
+        .text--switch {
+            // margin-left: 10px;
+
+            h4 {
+                font-size: 18px;
+                font-weight: 500;
+                margin: 0 0 8px 0;
+            }
+
+            p {
+                color: #d1d0d0;
+                font-size: 14px;
+            }
+        }
+
+
+    }
+
+    .section--5 {
+        @extend %section;
+        margin: 2rem 0rem 0;
+
+
+        text-align: center;
+
+        button {
+            background-color: #0F44A0;
+            width: 180px;
+            color: white;
+            border-radius: 4px;
+            height: 50px;
+
+            span {
+                position: relative;
+                top: 4px;
+                left: 20px;
+                font-size: 18px;
+            }
+        }
+
+    }
+
+}

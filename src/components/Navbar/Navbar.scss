@@ -1,0 +1,61 @@
+.nav {
+    background-color: #0F44A0;
+    color: white;
+    padding: 29px;
+    justify-content: space-between;
+
+    p {
+        font-size:20px;
+
+        span {
+            font-weight: bold;
+            padding-right: 5px;
+        }
+    }
+
+    .searchbar {
+        width: 40%;
+        position: relative;
+
+        input {
+            width: 100%;
+            background-color: #5983ca;
+            border: none;
+            font-size: 14px;
+            padding: 0 1.5rem;
+            color: white;
+            
+            &::placeholder {
+                color: white;
+            }
+        }
+
+        .icon {
+            position: absolute;
+            right: 15px;
+            font-size: 20px;
+            top: 10px;
+        }
+    }
+
+    .button--double {
+        grid-gap: 1rem;
+
+        button {
+            padding: 0 1.5rem;
+            color: white;
+            border-radius: 4px;
+
+            &:first-child {
+                background-color: transparent;
+                border: 1px solid white;
+            }
+            
+            &:nth-child(2) {
+                background-color: rgb(85, 180, 85);
+            }
+
+
+        }
+    }
+}
