@@ -104,25 +104,25 @@ const Body = () => {
                     <p>Export</p>
                 </div>
                 <div className='map--search'>
-                    <input placeholder='From City or port'/>
+                    <input maxLength={6} placeholder='From City or port'/>
                     <FaMapMarkerAlt className='icon'/>
                 </div>
                 <div className='map--search'>
-                    <input placeholder='To City or port'/>
+                    <input maxLength={6} placeholder='To City or port'/>
                     <FaMapMarkerAlt className='icon'/>
                 </div>
             </div>
             <div className='row--1 row--2 flex--1'>
                 <div className='map--search'>
-                    <input placeholder='Readv Date'/>
+                    <input maxLength={6} placeholder='Readv Date'/>
                     <IoIosBriefcase className='icon'/>
                 </div>
                 <div className='map--search'>
-                    <input placeholder='Incoterms'/>
+                    <input maxLength={6} placeholder='Incoterms'/>
                     <AiOutlineCaretDown className='icon icon--2'/>
                 </div>
                 <div className='map--search'>
-                    <input placeholder='From City or port'/>
+                    <input maxLength={6} placeholder='From City or port'/>
                 </div>
             </div>
         </section>
@@ -145,26 +145,26 @@ const Body = () => {
             {data.map((item, index) => (
                 <div className='label--cont' key={index}>
                     <div className='label--input'>
-                        <input className={`${data[index].quantity?.length && 'inputFLoat'}`} id={`'input'${index}`} value={item.quantity}  name="quantity" onChange={(e) => handleChange(e, index)}/>
+                        <input maxLength={6} className={`${data[index].quantity?.length && 'inputFLoat'}`} id={`'input'${index}`} value={item.quantity}  name="quantity" onChange={(e) => handleChange(e, index)}/>
                         <label className={`${data[index].quantity?.length && 'addFloat'}`} htmlFor={`'input'${index}`}>Quantity</label>
                     </div>
                     <div className='label--input'>
-                        <input className={`${data[index].length?.length && 'inputFLoat'}`} id={`'input--2'${index}`} value={item.length}  name="length" onChange={(e) => handleChange(e, index)}/>
+                        <input maxLength={6} className={`${data[index].length?.length && 'inputFLoat'}`} id={`'input--2'${index}`} value={item.length}  name="length" onChange={(e) => handleChange(e, index)}/>
                         <label className={`${data[index].length?.length && 'addFloat'}`} htmlFor={`'input--2'${index}`}>L</label>
                         <span>CM</span>
                     </div>
                     <div className='label--input'>
-                        <input className={`${data[index].weight?.length && 'inputFLoat'}`} id={`'input--3'${index}`} value={item.weight}  name="weight" onChange={(e) => handleChange(e, index)}/>
+                        <input maxLength={6} className={`${data[index].weight?.length && 'inputFLoat'}`} id={`'input--3'${index}`} value={item.weight}  name="weight" onChange={(e) => handleChange(e, index)}/>
                         <label className={`${data[index].weight?.length && 'addFloat'}`} htmlFor={`'input--3'${index}`}>W</label>
                         <span>CM</span>
                     </div>
                     <div className='label--input'>
-                        <input className={`${data[index].height?.length && 'inputFLoat'}`} id={`'input--4'${index}`} value={item.height}  name="height" onChange={(e) => handleChange(e, index)}/>
+                        <input maxLength={6} className={`${data[index].height?.length && 'inputFLoat'}`} id={`'input--4'${index}`} value={item.height}  name="height" onChange={(e) => handleChange(e, index)}/>
                         <label className={`${data[index].height?.length && 'addFloat'}`} htmlFor={`'input--4'${index}`}>H</label>
                         <span>CM</span>
                     </div>
                     <div className='label--input'>
-                        <input className={`${data[index].weight2?.length && 'inputFLoat'}`} id={`'input--5'${index}`} value={item.weight2}  name="weight2" onChange={(e) => handleChange(e, index)}/>
+                        <input maxLength={6} className={`${data[index].weight2?.length && 'inputFLoat'}`} id={`'input--5'${index}`} value={item.weight2}  name="weight2" onChange={(e) => handleChange(e, index)}/>
                         <label className={`${data[index].weight2?.length && 'addFloat'}`} htmlFor={`'input--5'${index}`}>Weight</label>
                         <span>Kg</span>
                     </div>
