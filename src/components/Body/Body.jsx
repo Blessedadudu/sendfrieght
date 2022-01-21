@@ -25,6 +25,7 @@ const Body = () => {
     const [switcher3, setSwitcher3] = useState(false);
     const [switcher4, setSwitcher4] = useState(false);
     const [switcher5, setSwitcher5] = useState(false);
+    const [color, setColor] = useState('a');
 
     const handleChangeSwitch = (num) => {
         if(num === 1) setSwitcher(prevState => !prevState);
@@ -32,7 +33,15 @@ const Body = () => {
         if(num === 3) setSwitcher3(prevState => !prevState);
         if(num === 4) setSwitcher4(prevState => !prevState);
         if(num === 5) setSwitcher5(prevState => !prevState);
+        
+        // change for color
+        if(num === 'a') setColor(prevState => prevState = 'a');
+        if(num === 'b') setColor(prevState => prevState = 'b');
+        if(num === 'c') setColor(prevState => prevState = 'c');
+        if(num === 'd') setColor(prevState => prevState = 'd');
+
     }
+
 
     const add = () => {
         const tempItem = [...data];  
@@ -76,20 +85,20 @@ const Body = () => {
         <section className='section--1'>
             <p className='heading'>Select a service</p>
             <div className='card--container'>
-                <div className='card'>
+                <div onClick={() => handleChangeSwitch('a')} className={`card pointer ${color === 'a' && 'card--state'}`}>
                     <p>Air Freight</p>
                     <MdAirplanemodeActive className='icon'/>
                 </div>
-                <div className='card card--state'>
+                <div onClick={() => handleChangeSwitch('b')} className={`card pointer ${color === 'b' && 'card--state'}`}>
                     <p>Sea Freight</p>
                     <RiShipFill className='icon'/>
                 </div>
-                <div className='card card--state'>
+                <div onClick={() => handleChangeSwitch('c')} className={`card pointer ${color === 'c' && 'card--state'}`}>
                     <p>Inland</p>
                     <p>(Truck & Barge)</p>
                     <FaTruck className='icon'/>
                 </div>
-                <div className='card card--state'>
+                <div onClick={() => handleChangeSwitch('d')} className={`card pointer ${color === 'd' && 'card--state'}`}>
                     <p>Custom</p>
                     <p>Clerance</p>
                     <GiPoliceOfficerHead className='icon'/>

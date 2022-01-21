@@ -76,13 +76,14 @@
             .card {
                 padding: 2rem 1rem;
                 border-radius: 4px;
-                background-color: #0F44A0;
-                color: white;
+                color: #888888;
+                border: 1px solid #888888;
                 height: 100px;
                 max-width: 330px;
                 position: relative;
                 overflow: hidden;
                 font-size: 14px;
+                transition: all .2s ease-in;
 
                 .icon {
                     position: absolute;
@@ -93,9 +94,8 @@
             }
 
             .card--state {
-                background-color: transparent;
-                color: #888888;
-                border: 1px solid #888888;
+                color: white;
+                background-color: #0F44A0;
             }
         }
 
