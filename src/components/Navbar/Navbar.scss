@@ -4,6 +4,8 @@
     padding: 29px;
     justify-content: space-between;
 
+    // 
+
     p {
         font-size:20px;
 
@@ -12,6 +14,13 @@
             padding-right: 5px;
         }
     }
+
+    .sub--flex {
+        flex: .75;
+        // border: 2px solid red;
+        justify-content: space-between;
+    }
+
 
     .searchbar {
         width: 40%;
@@ -56,6 +65,141 @@
             }
 
 
+        }
+    }
+
+    // Nabar Hamburger
+
+    .nav_checkbox {
+        display: none;
+        visibility: hidden;
+        background-color: transparent;
+        margin-right: 3rem;          
+    }
+
+    .nav_button {
+        height: 7rem;
+        display: none;
+        width: 7rem;
+        position: absolute;
+        top: -18px;
+        right: -1.2rem;
+        border-radius: 50%;
+        z-index: 2000;
+        text-align: center;
+        cursor: pointer;
+
+    }
+
+    //ICON
+    .iconz {
+        position: relative;
+        margin-top: 3rem;
+
+        &,
+        &::before,
+        &::after {
+            width: 1.6rem;
+            height: 1.7px;
+            background-color: rgb(255, 251, 251);
+            display: inline-block;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            transition: all .2s;
+        }
+
+        &::before { top: -.5rem; }
+        &::after { top: .5rem; }
+    }
+
+
+    .nav_checkbox:checked + .nav_button .iconz {
+        background-color: transparent;
+    }
+
+    .nav_checkbox:checked + .nav_button .iconz::before {
+        top: 0;
+        transform: rotate(135deg);
+    }
+
+    .nav_checkbox:checked + .nav_button .iconz::after {
+        top: 0;
+        transform: rotate(-135deg);
+    }
+
+}
+
+@media only screen and (max-width: 1000px) {
+    .nav {
+        // overflow: hidden;
+        padding: 20px 1.5rem;
+
+        .sub--flex {
+            flex: .75;
+            // border: 2px solid red;
+            justify-content: space-between;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+        .nav_button {
+            display: block;
+        }
+
+        .sub--flex {
+            position: absolute;
+            justify-content: flex-start;
+            align-items: flex-start;
+            z-index: 100;
+            padding: 2rem 1.5rem;
+            background-color: #0F44A0;
+            top: 50px;
+            left: 0;
+            width: 100%;
+            border-top: 1px solid white;
+            grid-gap: 2rem;
+            display: none; 
+            opacity: 0;
+
+            transition: opacity .2s ease;
+        }
+
+        .searchbar {
+            width: 100%;
+            position: relative;
+        }
+
+        .button--double button:first-child {
+            border: 1px solid #181616;
+            background: #ebe7e7;
+            color: #181616;
+        }
+
+
+        .nav_checkbox:checked ~ .sub--flex {
+            opacity: 1;  
+            display: flex; 
+            top: 60px;
+        }
+
+
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .nav{
+        .button--double {
+            button {
+               width: fit-content;
+               font-size: 14px;
+               padding: 0 0.7rem;
+            }
         }
     }
 }
